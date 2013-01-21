@@ -18,17 +18,27 @@ end
 blocks(end,1:end) = 1;
 blocks(1:end,end) = 1;
 I = uint8(I);
+
 for i= 1:512
     for j= 1:512
         if(I(i,j)== 1)
             I(i,j) = 0;
         else
-            I(i,j) = 1;
+            I(i,j) = 5;
         end
     end
 end
             
+
 blocks = blocks + I;
+
+for i= 1:512
+    for j= 1:512
+        if(blocks(i,j)>= 2)
+            blocks(i,j) = 2;
+        end
+    end
+end
 
 
 imshow(I), figure, imshow(blocks,[])

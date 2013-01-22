@@ -3,11 +3,6 @@ clear all
 close all
 I = imread('cenario1.png');
 I = im2bw(I);
-
-%dilata a imagem para simular o tamanho do robo, alterar o tamanho no se
-se = strel('disk',10);
-I = imerode(I,se);
-
 S = qtdecomp(I,.27);
 blocks = repmat(uint8(0),size(S));
 
@@ -34,10 +29,6 @@ for i= 1:512
     end
 end
             
-% lendo os pontos de inicio e fim da trajetoria
-%[inicio, fim] = ginput(2);
-%inicio = uint16(inicio)
-%fim = uint16(fim)
 
 blocks = blocks + I;
 
@@ -49,7 +40,9 @@ for i= 1:512
     end
 end
 
-blocks= fillQuad(32, 96, blocks);
-%blocks= Next(96, 32, 1, blocks);
-%blocks= Next(96, 32, 2, blocks);
-figure, imshow(blocks,[])
+blocks= fillQuad(96,32,blocks);
+imshow(I), figure, imshow(blocks,[])
+% exemplo de como pegar os pontos iniciais e finais da trajetoria
+[inicio, fim] = ginput(2)
+inicio = uint16(inicio)
+fim = uint16(fim)

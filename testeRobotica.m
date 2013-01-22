@@ -40,6 +40,7 @@ for i= 1:512
     end
 end
 
-blocks= fillQuad(96,32,blocks);
-blocks= Next(96, 32, 1, blocks);
+blocks= fillQuad(32, 96, blocks);
+%blocks= Next(96, 32, 1, blocks);
+%blocks= Next(96, 32, 2, blocks);
 figure, imshow(blocks,[])

@@ -1,22 +1,21 @@
-function i = FillQuad(xmin, ymin, img )
+function i = FillQuad(x, y, img )
 %UNTITLED2 Summary of this function goes here
 %   Detailed explanation goes here
     i = 0;
     l = 0;
     %Acha o canto Superior Esquerdo
-    while(img(xmin+i,ymin)==0)
-        img(xmin+i,ymin)=0;
+    while(img(x+i,y)==0)
         i = i - 1;
     end
-    while(img(xmin, ymin+l)==0)
+    while(img(x, y+l)==0)
         l = l - 1;
     end
     j = i + 1;
     k = l + 1;
     %Preenche a partir do Superior Esquerdo
-    while(img(xmin+j, ymin+k)==0)
-        while(img(xmin+j,ymin+k)==0)
-            img(xmin+j, ymin+k) = 1;
+    while(img(x+j, y+k)==0)
+        while(img(x+j,y+k)==0)
+            img(x+j, y+k) = 1;
             j = j + 1;
         end
         k = k + 1;

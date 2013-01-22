@@ -5,7 +5,7 @@ I = imread('cenario1.png');
 I = im2bw(I);
 
 %dilata a imagem para simular o tamanho do robo, alterar o tamanho no se
-se = strel('disk',10);
+se = strel('disk',0);
 I = imerode(I,se);
 
 S = qtdecomp(I,.27);
@@ -39,6 +39,7 @@ end
 %inicio = uint16(inicio)
 %fim = uint16(fim)
 
+
 blocks = blocks + I;
 
 for i= 1:512
@@ -49,7 +50,7 @@ for i= 1:512
     end
 end
 
-blocks= fillQuad(32, 96, blocks);
-%blocks= Next(96, 32, 1, blocks);
+%blocks= fillQuad(70, 70, blocks);
+blocks= Next(70, 70, 4, blocks);
 %blocks= Next(96, 32, 2, blocks);
 figure, imshow(blocks,[])

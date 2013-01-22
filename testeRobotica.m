@@ -50,7 +50,10 @@ for i= 1:512
     end
 end
 
+blocks = TraceRoute(32, 32, 70, 32, blocks);
 %blocks= fillQuad(70, 70, blocks);
-blocks= Next(70, 70, 4, blocks);
+%blocks= Next(70, 70, 1, blocks);
+%res = QuadFree(70,70, blocks)
+%res1 = SameQuad(65, 65, 71, 71, blocks)
 %blocks= Next(96, 32, 2, blocks);
 figure, imshow(blocks,[])

@@ -1,0 +1,20 @@
+function i = TraceRoute( xi, yi, xf, yf, img )
+%TRACEROUTE Summary of this function goes here
+%   Detailed explanation goes here
+    xa = xi;
+    ya = yi;
+    FillQuad(xa, ya, img);
+    while~(SameQuad(xa, ya, xf, yf, blocks))
+        modx = xf - xa;
+        mody = yf - ya;
+        if modx > mody
+         Next(xa,ya, 2, img);
+         xa=xf;
+         ya= yf;
+        else
+        %anda no y
+        end
+    end
+
+end
+

@@ -40,5 +40,5 @@ for i= 1:512
     end
 end
 
-
+blocks= fillQuad(96,32,blocks);
 imshow(I), figure, imshow(blocks,[])

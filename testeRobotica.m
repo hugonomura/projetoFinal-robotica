@@ -41,4 +41,5 @@ for i= 1:512
 end
 
 blocks= fillQuad(96,32,blocks);
-imshow(I), figure, imshow(blocks,[])
+blocks= Next(96, 32, 1, blocks);
+figure, imshow(blocks,[])

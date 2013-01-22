@@ -52,7 +52,7 @@ end
 
 %blocks = TraceRoute(32, 32, 32, 130, blocks);
 %blocks= fillQuad(70, 70, blocks);
-blocks= Next(32, 70, 2, blocks);
+%blocks= Next(32, 70, 2, blocks);
 %res = QuadFree(70,70, blocks)
 %res1 = SameQuad(65, 65, 71, 71, blocks)
 %blocks= Next(96, 32, 2, blocks);

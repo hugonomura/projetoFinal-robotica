@@ -3,6 +3,11 @@ clear all
 close all
 I = imread('cenario1.png');
 I = im2bw(I);
+
+%dilata a imagem para simular o tamanho do robo, alterar o tamanho no se
+se = strel('disk',10);
+I = imerode(I,se);
+
 S = qtdecomp(I,.27);
 blocks = repmat(uint8(0),size(S));
 
